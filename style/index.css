@@ -327,3 +327,351 @@ body {
   flex-shrink: 0;
   margin-top: 10px;
 }
+
+/* ── MOBILE MENU ── */
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.hamburger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: white;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.mobile-menu {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(8, 8, 16, 0.97);
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2.5rem;
+  z-index: 40;
+}
+
+.mobile-menu a {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 2rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: -0.5px;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.mobile-menu a:hover {
+  color: white;
+}
+
+.mobile-menu.open {
+  display: flex;
+}
+
+.mobile-close {
+  position: absolute;
+  top: 2rem;
+  right: 1.5rem;
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.mobile-close:hover {
+  color: white;
+}
+
+/* ── TABLET (max 1024px) ── */
+@media (max-width: 1024px) {
+  nav {
+    padding-inline: 2rem;
+    padding-block: 1.5rem;
+  }
+
+  /* Hero */
+  .hero-main {
+    grid-template-columns: 1fr !important;
+    padding: 6rem 3rem 4rem;
+    gap: 3rem;
+  }
+
+  .hero-main img {
+    display: none;
+  }
+
+  .hero-main h1 {
+    font-size: 5rem !important;
+  }
+
+  /* About */
+  .about {
+    padding: 4rem 3rem;
+    margin-top: -30vh;
+  }
+
+  .about .grid {
+    grid-template-columns: 1fr !important;
+    gap: 3rem;
+  }
+
+  .about .sticky {
+    position: static;
+  }
+
+  .about h2 {
+    font-size: 3.5rem !important;
+  }
+
+  /* Projects */
+  .projects-wrap {
+    padding-top: 60px;
+  }
+
+  .projects-heading {
+    top: 20px;
+    left: 10vw;
+    z-index: 30;
+  }
+
+  .horizontal-section {
+    height: auto;
+    overflow-x: auto;
+    overflow-y: visible;
+    padding-block: 5rem 3rem;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .horizontal-section::-webkit-scrollbar {
+    display: none;
+  }
+
+  .track {
+    padding-inline: 5vw;
+    gap: 20px;
+    width: max-content;
+  }
+
+  .project-card {
+    width: 300px !important;
+    flex-shrink: 0;
+  }
+
+  /* Experience */
+  .experience {
+    padding-inline: 3rem;
+  }
+
+  .experience-show {
+    height: auto;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .experience-card {
+    flex: none !important;
+    width: 100% !important;
+    height: 220px;
+    opacity: 1 !important;
+    transition: none !important;
+  }
+
+  .experience-show:has(.experience-card:hover) .experience-card:not(:hover) {
+    flex: none !important;
+    width: 100% !important;
+    opacity: 1 !important;
+  }
+
+  .experience-card .image {
+    width: 200px !important;
+    opacity: 1 !important;
+    transition: none !important;
+  }
+
+  .experience-card .body {
+    padding: 1.5rem;
+    gap: 10px;
+  }
+
+  .experience-card .body h2 {
+    font-size: 1.5rem !important;
+  }
+
+  .short {
+    display: block !important;
+    opacity: 1 !important;
+    transform: none !important;
+    position: static !important;
+    font-size: 13px !important;
+  }
+
+  .extra {
+    display: none !important;
+  }
+
+  /* Skills */
+  .skills-section {
+    padding: 4rem 3rem;
+    overflow: hidden;
+    width: 100%;
+  }
+
+  .skills-grid {
+    grid-template-columns: 1fr !important;
+    width: 100%;
+  }
+
+  .marquee {
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .mq-wrap {
+    overflow: hidden;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .mq-inner {
+    width: max-content;
+  }
+
+  /* Contact */
+  #contact {
+    width: 80% !important;
+    padding-inline: 0;
+  }
+
+  #contact h2 {
+    font-size: 3.5rem !important;
+  }
+}
+
+/* ── MOBILE (max 640px) ── */
+@media (max-width: 640px) {
+  nav {
+    padding-inline: 1.5rem;
+  }
+
+  nav ul.nav-links {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  /* Hero */
+  .hero-main {
+    padding: 5rem 1.5rem 3rem;
+  }
+
+  .hero-main h1 {
+    font-size: 3.5rem !important;
+    letter-spacing: -2px !important;
+  }
+
+  .hero-main p {
+    font-size: 1rem !important;
+  }
+
+  /* About */
+  .about {
+    padding: 3rem 1.5rem;
+    border-radius: 24px 24px 0 0;
+    margin-top: -45vh;
+  }
+
+  .about h2 {
+    font-size: 2.8rem !important;
+  }
+
+  /* Projects */
+  .projects-wrap {
+    padding-top: 80px;
+  }
+
+  .projects-heading {
+    left: 1.5rem;
+    top: 10px;
+  }
+
+  .horizontal-section {
+    padding-block: 4rem 2rem;
+  }
+
+  .track {
+    padding-inline: 1.5rem;
+    gap: 16px;
+  }
+
+  .project-card {
+    width: 280px !important;
+  }
+
+  /* Experience */
+  .experience {
+    padding-inline: 1.5rem;
+  }
+
+  .experience-card {
+    height: 180px;
+  }
+
+  .experience-card .image {
+    width: 140px !important;
+  }
+
+  .experience-card .body h2 {
+    font-size: 1.2rem !important;
+  }
+
+  .experience-card .body p,
+  .short {
+    font-size: 12px !important;
+  }
+
+  /* Skills */
+  .skills-section {
+    padding: 3rem 1.5rem;
+    overflow: hidden;
+    width: 100%;
+  }
+
+  .marquee {
+    width: 100%;
+    overflow: hidden;
+  }
+
+  /* Contact */
+  #contact {
+    width: 100% !important;
+    padding-inline: 1.5rem;
+  }
+
+  #contact h2 {
+    font-size: 2.8rem !important;
+  }
+
+  /* Footer */
+  .mt-24 {
+    padding-inline: 1.5rem;
+  }
+}

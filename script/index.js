@@ -70,3 +70,20 @@ document.querySelector('a[href="#projects"]').addEventListener("click", (e) => {
     window.scrollY + rect.top + rect.height / 2 - window.innerHeight / 2;
   window.scrollTo({ top: scrollTop, behavior: "smooth" });
 });
+
+const hamburger = document.querySelector(".hamburger");
+const mobileMenu = document.querySelector(".mobile-menu");
+
+hamburger?.addEventListener("click", () => {
+  mobileMenu.classList.toggle("open");
+});
+
+mobileMenu?.querySelectorAll("a").forEach((link) => {
+  link.addEventListener("click", () => {
+    mobileMenu.classList.remove("open");
+  });
+});
+
+document.querySelector(".mobile-close")?.addEventListener("click", () => {
+  mobileMenu.classList.remove("open");
+});

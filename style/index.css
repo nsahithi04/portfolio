@@ -628,15 +628,16 @@ body {
 
   /* Experience */
   .experience {
-    padding-inline: 1.5rem;
+    padding: 30px;
   }
 
   .experience-card {
-    height: 180px;
+    height: 300px;
   }
 
   .experience-card .image {
     width: 140px !important;
+    display: none;
   }
 
   .experience-card .body h2 {
